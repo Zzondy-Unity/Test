@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2009150144694183214}
   - component: {fileID: 2003604051135651788}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: WeaponSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4919917312127875174}
   - component: {fileID: 1126228454912296652}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 7515633906789234131}
   - component: {fileID: 1188059387738824236}
   - component: {fileID: 9067918693142706501}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProjectileSpawnPosition: {fileID: 1870724571307548123}
-  TestPrefab: {fileID: 817828196627379078, guid: b60fd9b5c6bbe974fa020e64e0f2ef84, type: 3}
+  ShootingClip: {fileID: 0}
 --- !u!114 &9067918693142706501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,7 +391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1870724571307548123}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2073289099206292033}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: WeaponPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

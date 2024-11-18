@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2539514739123047426}
   - component: {fileID: 7368873482328187086}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: WeaponSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7930490586378207220}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 8707562995042859874}
   - component: {fileID: 2861926164900174670}
   - component: {fileID: -6204236775285753804}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: OrcShaman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,6 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProjectileSpawnPosition: {fileID: 7930490586378207220}
+  ShootingClip: {fileID: 0}
 --- !u!114 &8707562995042859874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
+  DamageClip: {fileID: 0}
 --- !u!114 &-6204236775285753804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +352,7 @@ GameObject:
   - component: {fileID: 8059840746838026218}
   - component: {fileID: 1514617498208115875}
   - component: {fileID: 4818082840404536278}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5387297698183343395}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: WeaponPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
