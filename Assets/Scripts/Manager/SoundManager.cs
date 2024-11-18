@@ -41,4 +41,15 @@ public class SoundManager : MonoBehaviour
         SoundSource soundSource = obj.GetComponent<SoundSource>();
         soundSource.Play(clip, instance.soundEffectVolume, instance.soundEffectPitchVariance);
     }
+
+
+    public void PauseBGM()
+    {
+        instance.musicSource.Pause();
+    }
+
+    public void ResumeBGM()
+    {
+        instance.musicSource.UnPause();
+    }
 }
