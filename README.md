@@ -99,7 +99,7 @@
         <ul>
           <li>Awake 메소드 내의 초기화 코드를 분리하는 것이 더 깔끔해보일 것 같습니다.</li>
             <ul>
-              <li> </li>
+              <li>InitAttackSO함수를 만들어 SO를 만들어 넘김</li>
             </ul>
           <li>ApplyStatModifiers 메소드 내의 switch식의 코드를 분리하면 가독성이 높아질 것 같습니다.</li>
             <ul>
