@@ -35,5 +35,48 @@
     </div>
 </details>
 
+<details>
+  <summary>Q2</summary>
+    <div markdown="1">
+      <ul>
+<li>1.OX 퀴즈</li>
+        <ul>
+        <li>코루틴은 비동기 작업을 처리하기 위해 사용된다. O</li>
+        <li>yield return new WaitForSeconds(1);는 코루틴을 1초 동안 대기시킨다. O</li>
+        <li>코루틴은 void를 반환하는 메소드의 형태로 구현된다. X</li>
+          <ul>
+            <li>코루틴은 IEnumerator를 반환하는 메서드이다.</li>
+          </ul>
+        </ul>
+  <li>2. 코루틴을 이미 실행중이라면 추가로 실행하지 않으려면 어떻게 처리해주면 될까요?</li>
+        <ul>
+          <li>
+        ```csharp
+        if(ForceCoroutine != null)
+        {
+            StopCoroutine(ForceCoroutine);
+        }
+        ForceCoroutine = StartCoroutine(ChangeSpeed(percentage, duration, up));
+        ```
+          </li>
+     <li>위와같이 Coroutine 변수를 지정하여 추가 실행있는지 여부를 항상 체크합니다.</li>
+        </ul>
+  <li>3. 코루틴 실행 중 게임오브젝트가 파괴되더라도 코루틴의 실행이 정상적으로 지속될까요?</li>
+        <ul>
+     <li>게임 오브젝트가 파괴되면 코루틴은 정지합니다. 코루틴은 해당 코루틴을 시작한 게임 오브젝트의 생명주기에 종속되기 때문입니다.</li>
+        </ul>
+<li>4. 웨이브 10, 30, 50, …에 부여되는 랜덤 디버프를 만들어봅시다.</li>
+        <ul>
+  <li>일시정지버튼, 계속버튼, 그리고 일시정지시 화면에 불투명한 검은 판을 설치하여 화면이 정지되었음을 알려준다.</li>
+  <li>Pause스크립트를 작성.</li>
+          <ul>
+            <li>버튼과 판넬을 키고끄면서 타임스케일 값을 조절하여 일시정지시킨다.</li>
+            <li>UI매니저를 만들어 Pause를 넣고 이벤트를 만든다.</li>
+            <li>플레이어의 Input을 담당하는 InputController스크립트에서 canMove, canLook 변수를 작성하고 각 이벤트에 해당하는 함수를 이벤트에 등록시킨다.</li>
+          </ul>
+        </ul>
+        </ul>
+    </div>
+</details>
 
 
