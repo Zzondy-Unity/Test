@@ -25,7 +25,11 @@ public class CharacterStatHandler : MonoBehaviour
     private void Awake()
     {
         UpdateCharacterStat();
+        InitAttackSO();
+    }
 
+    private void InitAttackSO()
+    {
         if (baseStat.attackSO != null)
         {
             //기본스탯 초기화
@@ -57,7 +61,7 @@ public class CharacterStatHandler : MonoBehaviour
         UpdateCharacterStat();
     }
 
-    private void ApplyStatModifier(CharacterStat modifier)
+    private void ApplyStatModifier(CharacterStat modifier)  //abstract class characterstat?
     {
         //operation이 어떤 연산을 할 것인지 정의
         Func<float, float, float> operation = modifier.statsChangeType switch
@@ -66,6 +70,7 @@ public class CharacterStatHandler : MonoBehaviour
             StatsChangeType.Multiple => (current, change) => current * change,
             _ => (current, change) => change
         };
+        //Func<float, float, float> operation = modifier
 
         UpdateBasicStats(operation, modifier);
         UpdateAttackStats(operation, modifier);
