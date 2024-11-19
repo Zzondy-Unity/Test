@@ -148,6 +148,10 @@ public class GameManager : MonoBehaviour
         if (currentWaveIndex % 10 == 0)
         {
             IncreaseSpawnPositions();
+            if(((currentWaveIndex % 10) % 2).Equals(1))
+            {
+                RandomDebuff();
+            }
         }
 
         if (currentWaveIndex % 5 == 0)
@@ -159,6 +163,14 @@ public class GameManager : MonoBehaviour
         {
             IncreaseWaveSpawnCount();
         }
+    }
+
+    private void RandomDebuff()
+    {
+        int randomDecrease = Random.Range(0, 51);
+        float curHealth = healthSystem.CurrentHealth;
+        float damage = curHealth * randomDecrease * 0.01f;
+        healthSystem.ChangeHealth(damage);
     }
 
     private void IncreaseWaveSpawnCount()
