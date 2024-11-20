@@ -102,7 +102,7 @@ MonoBehaviour:
   statsModifiers:
   - statsChangeType: 0
     maxHealth: 10
-    speed: 0
+    speed: 2
     attackSO: {fileID: 0}
 --- !u!61 &6703860755667383784
 BoxCollider2D:
