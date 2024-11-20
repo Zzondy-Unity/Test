@@ -17,12 +17,22 @@ public class CharacterStatHandler : MonoBehaviour
     private readonly float MinAttackPower = 0.5f;
     private readonly float MinAttackSize = 0.4f;
     private readonly float MinAttackSpeed = .1f;
-
     private readonly float MinSpeed = 0.8f;
-
     private readonly int MinMaxHealth = 5;
 
+    private readonly Dictionary<StatsChangeType, Func<float, float, float>> OperationMethod = new Dictionary<StatsChangeType, Func<float, float, float>>
+    {
+        {StatsChangeType.Add, (current, change) => current + change },
+        {StatsChangeType.Multiple, (current, change) => current * change },
+        {StatsChangeType.Override, (current, change) => change }
+    };
+
     private void Awake()
+    {
+        InitalizeStat();
+    }
+
+    private void InitalizeStat()
     {
         UpdateCharacterStat();
         InitAttackSO();
@@ -64,13 +74,7 @@ public class CharacterStatHandler : MonoBehaviour
     private void ApplyStatModifier(CharacterStat modifier)  //abstract class characterstat?
     {
         //operation이 어떤 연산을 할 것인지 정의
-        Func<float, float, float> operation = modifier.statsChangeType switch
-        {
-            StatsChangeType.Add => (current, change) => current + change,
-            StatsChangeType.Multiple => (current, change) => current * change,
-            _ => (current, change) => change
-        };
-        //Func<float, float, float> operation = modifier
+        Func<float, float, float> operation = OperationMethod[modifier.statsChangeType];
 
         UpdateBasicStats(operation, modifier);
         UpdateAttackStats(operation, modifier);
@@ -79,6 +83,7 @@ public class CharacterStatHandler : MonoBehaviour
             UpdateRangedAttackStats(operation, currentRanged, newRanged);
         }
     }
+
 
     private void UpdateRangedAttackStats(Func<float, float, float> operation, RangedAttackSO currentRanged, RangedAttackSO newRanged)
     {
