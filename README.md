@@ -100,10 +100,13 @@
           <li>Awake 메소드 내의 초기화 코드를 분리하는 것이 더 깔끔해보일 것 같습니다.</li>
             <ul>
               <li>InitAttackSO함수를 만들어 SO를 만들어 넘김</li>
+              <li>Initialize함수를 만들어 순서를 정하게하고 Awake에서는 단순히 초기화만 하도록 변경</li>
             </ul>
           <li>ApplyStatModifiers 메소드 내의 switch식의 코드를 분리하면 가독성이 높아질 것 같습니다.</li>
             <ul>
-              <li>  </li>
+              <li>StatsChangeType을 Key로, 그에 해당하는 Func를 Value로 가지는 Dictionary를 추가</li>
+              <li>아래 1줄을 통해 OperationMethod를 얻고 새로운 추가가 있을경우 Dictionary에만 추가하면 된다.</li>
+              <li>Func<float, float, float> operation = OperationMethod[modifier.statsChangeType];</li>
             </ul>
         </ul>
     </ul>
